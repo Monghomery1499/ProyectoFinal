@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-title>Music Book</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-card>
+      <ion-row>
+        <ion-col size="12" *ngFor="let contenido of inicio">
+          <ion-card-header>
+            <img [src]="contenido.imagen" style="height: 150px; left: 75px; display:block; margin:auto;">
+            <ion-card-title>{{contenido.nombre}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content style="text-align: justify;">
+            {{contenido.descrip}}
+            <ion-item>
+              <ion-button fill="outline" slot="end" routerLink="{{contenido.direccion}}">
+                <ion-icon name="musical-notes-outline"></ion-icon>ver mas
+              </ion-button>
+            </ion-item>
+          </ion-card-content>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-grid>
+</ion-content>
